@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/*
+  LTCware design system.
+  Brand colors are defined once here and exposed as Tailwind utilities
+  (bg-brand, text-navy, border-teal, etc.) via @theme.
+*/
+@theme {
+  --color-brand: #0787d1; /* primary blue   */
+  --color-brand-2: #20a6e8; /* secondary blue */
+  --color-navy: #08233e; /* deep navy      */
+  --color-teal: #35b995; /* teal accent    */
+  --color-mist: #f5f7f9; /* light gray     */
+  --color-ink: #111827; /* dark text      */
+
+  --color-brand-50: #eef8fd;
+  --color-brand-100: #d4edfa;
+  --color-brand-700: #0669a3;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --radius-xl2: 1.75rem;
+
+  --shadow-soft: 0 1px 2px rgba(8, 35, 62, 0.04),
+    0 12px 32px -12px rgba(8, 35, 62, 0.12);
+  --shadow-card: 0 1px 2px rgba(8, 35, 62, 0.05),
+    0 20px 45px -20px rgba(8, 35, 62, 0.18);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #111827;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Consistent, Nextcloud-like content column. */
+.container-lg {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 768px) {
+  .container-lg {
+    padding-inline: 2rem;
+  }
+}
+
+/* Large enterprise headings with tight tracking. */
+.h-display {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+/* Reusable rounded card surface. */
+.card-surface {
+  background: #fff;
+  border: 1px solid rgba(8, 35, 62, 0.08);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Simple entrance animations for menus + simulator. */
+@keyframes ltc-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: ltc-fade-in 0.16s ease-out both;
+}
+
+@keyframes ltc-slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.animate-slide-in {
+  animation: ltc-slide-in 0.22s ease-out both;
+}
+
+/* Subtle dotted grid used behind hero / diagram panels. */
+.bg-dotgrid {
+  background-image: radial-gradient(
+    rgba(8, 35, 62, 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
