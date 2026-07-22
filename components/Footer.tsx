@@ -65,9 +65,8 @@ export function Footer() {
         <div className="mt-14 border-t border-white/10 pt-8">
           <div className="flex flex-col gap-4 text-xs text-white/45 md:flex-row md:items-center md:justify-between">
             <p className="max-w-2xl leading-relaxed">
-              Independent {site.brand} concept prototype. Not affiliated with or
-              endorsed by Nextcloud. Some products, metrics, case studies, and
-              workflows shown are illustrative.
+              Independent {site.brand} concept prototype. Some products, metrics,
+              case studies, and workflows shown are illustrative.
             </p>
             <p className="shrink-0">
               © {site.brand} — concept prototype. {site.location}.

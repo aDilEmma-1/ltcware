@@ -27,7 +27,7 @@ export const site = {
   disclaimerShort:
     "Concept prototype — no real wallet or cryptographic operation.",
   disclaimerLong:
-    "Independent LTCware concept prototype. Not affiliated with or endorsed by Nextcloud. Some products, metrics, case studies, and workflows shown are illustrative.",
+    "Independent LTCware concept prototype. Some products, metrics, case studies, and workflows shown are illustrative.",
 };
 
 /* ------------------------------------------------------------------ */
