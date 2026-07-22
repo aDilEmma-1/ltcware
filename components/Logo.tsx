@@ -2,8 +2,8 @@ import Link from "next/link";
 import { site } from "@/content/site";
 
 /**
- * Original LTCware wordmark. A rounded gradient tile holding a shield + keyhole
- * glyph (recovery + security), next to the LTCware name. No third-party assets.
+ * Official LTCware wordmark (from uniwaffle.com/images/logo.svg), inlined so the
+ * "ware" half can flip to white on dark backgrounds. "LTC" stays brand cyan.
  */
 export function Logo({
   variant = "dark",
@@ -12,43 +12,48 @@ export function Logo({
   variant?: "dark" | "light";
   className?: string;
 }) {
-  const textColor = variant === "light" ? "text-white" : "text-navy";
-  const subColor = variant === "light" ? "text-white/60" : "text-ink/50";
+  // "LTC" is always brand cyan; "ware" is navy on light surfaces, white on dark.
+  const wareColor = variant === "light" ? "#ffffff" : "#202a2d";
   return (
     <Link
       href="/"
-      className={`inline-flex items-center gap-2.5 ${className}`}
+      className={`inline-flex items-center ${className}`}
       aria-label={`${site.brand} home`}
     >
-      <svg width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden>
-        <defs>
-          <linearGradient id="ltcMark" x1="0" y1="0" x2="40" y2="40">
-            <stop offset="0" stopColor="#20A6E8" />
-            <stop offset="1" stopColor="#0787D1" />
-          </linearGradient>
-        </defs>
-        <rect width="40" height="40" rx="11" fill="url(#ltcMark)" />
+      <svg
+        width="146"
+        height="22"
+        viewBox="0 0 146 22.001"
+        fill="none"
+        className="h-[22px] w-auto"
+        role="img"
+        aria-label={site.brand}
+      >
+        {/* LTC — brand cyan */}
+        <path d="M8.8,0V4.265h9.7V22h5.168V0Z" fill="#00aad8" />
+        <path d="M0,0V22H14.87V17.735h-9.7V0Z" fill="#00aad8" />
         <path
-          d="M20 8.5l8.5 3.2v6.1c0 5.4-3.6 9.9-8.5 11.7-4.9-1.8-8.5-6.3-8.5-11.7v-6.1L20 8.5z"
-          fill="white"
-          fillOpacity="0.16"
-          stroke="white"
-          strokeWidth="1.6"
-          strokeLinejoin="round"
+          d="M27.407,0V22H44.932v-.01H50.1V12.751H44.932v4.983H32.575V4.265H44.932V9.2H50.1V0Z"
+          fill="#00aad8"
         />
-        <circle cx="20" cy="18.5" r="2.6" fill="white" />
-        <rect x="18.9" y="20.4" width="2.2" height="5" rx="1.1" fill="white" />
+        {/* ware — variant color */}
+        <path
+          d="M80.284.677,76.72,16.518,72.937.677H67.555L63.7,16.555,60.136.677H54.972L60.9,21.522h5.527L70.1,6.961l3.673,14.561h5.491L85.157.677Z"
+          fill={wareColor}
+        />
+        <path
+          d="M87.83,5.418a9.138,9.138,0,0,1,3.31-3.763A8.583,8.583,0,0,1,95.812.338a7.994,7.994,0,0,1,3.947.94,8.089,8.089,0,0,1,2.71,2.371V.677H107.6V21.522h-5.128V18.475a7.67,7.67,0,0,1-2.71,2.426,8.073,8.073,0,0,1-3.982.959,8.343,8.343,0,0,1-4.637-1.354,9.375,9.375,0,0,1-3.31-3.819,12.6,12.6,0,0,1-1.219-5.662A12.406,12.406,0,0,1,87.83,5.418m13.91,2.389A5.232,5.232,0,0,0,99.777,5.7a5.115,5.115,0,0,0-2.655-.734,5.032,5.032,0,0,0-2.618.716A5.3,5.3,0,0,0,92.557,7.77a6.731,6.731,0,0,0-.745,3.254,6.948,6.948,0,0,0,.745,3.291,5.469,5.469,0,0,0,1.965,2.164,4.855,4.855,0,0,0,2.6.752,5.109,5.109,0,0,0,2.655-.734,5.217,5.217,0,0,0,1.964-2.107,6.943,6.943,0,0,0,.728-3.292,6.95,6.95,0,0,0-.728-3.292"
+          fill={wareColor}
+        />
+        <path
+          d="M120.233,1.317a6.95,6.95,0,0,1,3.619-.941V5.907h-1.346a5.05,5.05,0,0,0-3.619,1.166q-1.219,1.167-1.218,4.064V21.522h-5.092V.677h5.092V3.913a7.288,7.288,0,0,1,2.563-2.6"
+          fill={wareColor}
+        />
+        <path
+          d="M145.856,12.68h-14.73a5.267,5.267,0,0,0,1.528,3.537,4.626,4.626,0,0,0,3.31,1.279A4.145,4.145,0,0,0,140,14.975h5.492a9.427,9.427,0,0,1-9.42,6.885,10.225,10.225,0,0,1-5.218-1.335,9.248,9.248,0,0,1-3.6-3.781,11.926,11.926,0,0,1-1.291-5.644,12.145,12.145,0,0,1,1.273-5.682A9.062,9.062,0,0,1,130.8,1.655a11.1,11.1,0,0,1,10.419-.037,8.857,8.857,0,0,1,3.527,3.631,11.284,11.284,0,0,1,1.255,5.4,12.965,12.965,0,0,1-.144,2.032m-5.129-3.537a4.239,4.239,0,0,0-1.418-3.254,4.926,4.926,0,0,0-3.383-1.224,4.528,4.528,0,0,0-3.181,1.186,5.273,5.273,0,0,0-1.583,3.292Z"
+          fill={wareColor}
+        />
       </svg>
-      <span className="leading-none">
-        <span className={`block text-lg font-bold tracking-tight ${textColor}`}>
-          {site.brand}
-        </span>
-        <span
-          className={`block text-[10px] font-semibold uppercase tracking-[0.18em] ${subColor}`}
-        >
-          Security Hub
-        </span>
-      </span>
     </Link>
   );
 }
