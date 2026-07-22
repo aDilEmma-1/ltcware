@@ -26,7 +26,7 @@ const capabilities = [
 
 /** Illustrative, non-runnable pseudocode shown in the hero visual. */
 const CodeMock = () => (
-  <div className="card-surface overflow-hidden bg-navy p-0 shadow-[var(--shadow-card)]">
+  <div className="overflow-hidden rounded-2xl border border-white/10 bg-navy p-0 shadow-[var(--shadow-card)]">
     <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-3">
       <span className="h-3 w-3 rounded-full bg-white/25" />
       <span className="h-3 w-3 rounded-full bg-white/25" />
